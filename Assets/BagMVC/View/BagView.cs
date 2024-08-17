@@ -12,6 +12,6 @@ public class BagView : MonoBehaviour
     public GameObject shop;
     public Button shopbut;
     public Button shopclose;
-    public Button openshop;
-   
+    public Transform shopitemcellparent;
+
 }

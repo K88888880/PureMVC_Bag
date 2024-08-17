@@ -13,11 +13,14 @@ public class BagCommand : PureMVC.Patterns.SimpleCommand
     {
         base.Execute(notification);
         BagMediator bagMediator = Facade.RetrieveMediator(BagMediator.NAME) as BagMediator;
+        ShopMediator shopMediator = Facade.RetrieveMediator(ShopMediator.NAME) as ShopMediator;
         if (bagMediator == null)
         {
             GameObject bag = GameObject.Instantiate(Resources.Load<GameObject>("BagPanel"));
             bagMediator = new BagMediator(bag);
+            shopMediator=new ShopMediator(bag);
             Facade.RegisterMediator(bagMediator);
+            Facade.RegisterMediator(shopMediator);
         }
     }
 }

@@ -871,7 +871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4643813354319772792
 RectTransform:
   m_ObjectHideFlags: 0
@@ -980,7 +980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7011080742797038438
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1254,6 +1254,10 @@ MonoBehaviour:
   close: {fileID: 3870756209946402491}
   openbut: {fileID: 716072941891682402}
   bag: {fileID: 7011080742797038437}
+  shop: {fileID: 4961450044256560301}
+  shopbut: {fileID: 7673466691037379909}
+  shopclose: {fileID: 1422994304084808489}
+  shopitemcellparent: {fileID: 4582738055545821152}
 --- !u!1 &7011080744543975291
 GameObject:
   m_ObjectHideFlags: 0
