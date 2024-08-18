@@ -10,6 +10,12 @@ public class BagFacade : PureMVC.Patterns.Facade
     public const string OPENBAG = "OPENBAG";
     public const string MODELCLOSEBAG = "MODELCLOSEBAG";
     public const string CREATESHOP = "CREATESHOP";
+    public const string BUYSHOPGOODS = "BUYSHOPGOODS";
+    public const string TIPDATA = "TIPDATA";
+    public const string BUYGOODSNUM = "BUYGOODSNUM";
+
+    public const string ADDGOODSNUM = "ADDGOODSNUM";
+    public const string SUBGOODSNUM = "SUBGOODSNUM";
 
 
 
@@ -46,6 +52,8 @@ public class BagFacade : PureMVC.Patterns.Facade
         RegisterCommand(CREATEBAG, typeof(CreateCommand));
         RegisterCommand(CLOSEBAG, typeof(CloseBagCommand));
         RegisterCommand(CREATESHOP, typeof(CreateShopCommand));
+        RegisterCommand(BUYSHOPGOODS, typeof(CreateTipCommand));
+        RegisterCommand(BUYGOODSNUM, typeof(BuyNumCommand));
     }
     /// <summary>
     /// ×¢²áModel
@@ -55,6 +63,8 @@ public class BagFacade : PureMVC.Patterns.Facade
         base.InitializeModel();
         RegisterProxy(new BagProxy(BagProxy.NAME));
         RegisterProxy(new ShopProxy(ShopProxy.NAME));
+        RegisterProxy(new TipProxy(TipProxy.NAME));
+
     }
 
 
