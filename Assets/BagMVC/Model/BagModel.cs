@@ -18,14 +18,20 @@ public class GoodsData
     public string power;
     public string Des;
 }
+
+public class BagData
+{
+    public int num;
+    public GoodsData goodsData=new GoodsData();
+}
 public class BagModel
 {
     private int bagcellNum;
     private List<Transform> bagcells=new List<Transform>();
     private List<GameObject> bagitem=new List<GameObject>();
-    private List<GoodsData> goodsDatas=new List<GoodsData>();
+    private List<BagData> goodsDatas=new List<BagData>();
     public int BagcellNum { get => bagcellNum; set => bagcellNum = value; }
     public List<Transform> Bagcells { get => bagcells; set => bagcells = value; }
     public List<GameObject> Bagitem { get => bagitem; set => bagitem = value; }
-    public List<GoodsData> GoodsDatas { get => goodsDatas; set => goodsDatas = value; }
+    public List<BagData> GoodsDatas { get => goodsDatas; set => goodsDatas = value; }
 }

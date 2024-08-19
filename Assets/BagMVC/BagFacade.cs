@@ -16,6 +16,11 @@ public class BagFacade : PureMVC.Patterns.Facade
 
     public const string ADDGOODSNUM = "ADDGOODSNUM";
     public const string SUBGOODSNUM = "SUBGOODSNUM";
+    public const string BUYNUM = "BUYNUM";
+    public const string LOADITEM = "LOADITEM";
+    public const string ACTIVETIP = "ACTIVETIP";
+
+    
 
 
 
@@ -54,6 +59,7 @@ public class BagFacade : PureMVC.Patterns.Facade
         RegisterCommand(CREATESHOP, typeof(CreateShopCommand));
         RegisterCommand(BUYSHOPGOODS, typeof(CreateTipCommand));
         RegisterCommand(BUYGOODSNUM, typeof(BuyNumCommand));
+        RegisterCommand(LOADITEM, typeof(LoadItemCommand));
     }
     /// <summary>
     /// ×¢²áModel

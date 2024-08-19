@@ -39,6 +39,7 @@ public class BagMediator : PureMVC.Patterns.Mediator
     {
        IList<string> list = new List<string>();
         list.Add(BagFacade.MODELCLOSEBAG);
+        list.Add(BagFacade.BUYNUM);
         return list;
     }
 
@@ -50,6 +51,11 @@ public class BagMediator : PureMVC.Patterns.Mediator
         {
             case BagFacade.MODELCLOSEBAG:
                 bagView.bag.SetActive(false);
+                break;
+                case BagFacade.BUYNUM:
+                //Debug.Log((notification.Body as List<object>)[0]);
+                //Debug.Log(((notification.Body as List<object>)[1] as GoodsData).icon);
+                SendNotification(BagFacade.LOADITEM, (notification.Body as List<object>));
                 break;
         }
     }
