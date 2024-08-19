@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BagFacade : PureMVC.Patterns.Facade
 {
+    public const string INITMAIN = "INITMAIN";
+    public const string INITMAINGOLD = "INITMAINGOLD";
+    public const string INITMAINJEWEL = "INITMAINJEWEL";
     public const string PLAYBAG = "PLAYBAG";
     public const string CREATEBAG = "CREATEBAG";
     public const string CLOSEBAG = "CLOSEBAG";
@@ -12,6 +15,9 @@ public class BagFacade : PureMVC.Patterns.Facade
     public const string CREATESHOP = "CREATESHOP";
     public const string BUYSHOPGOODS = "BUYSHOPGOODS";
     public const string TIPDATA = "TIPDATA";
+    public const string BUYGOODSNUMADD = "BUYGOODSNUMADD";
+    public const string BUYGOODSNUMSUB = "BUYGOODSNUMSUB";
+    public const string BUYGOODSNUMCON = "BUYGOODSNUMCON";
     public const string BUYGOODSNUM = "BUYGOODSNUM";
 
     public const string ADDGOODSNUM = "ADDGOODSNUM";
@@ -19,6 +25,12 @@ public class BagFacade : PureMVC.Patterns.Facade
     public const string BUYNUM = "BUYNUM";
     public const string LOADITEM = "LOADITEM";
     public const string ACTIVETIP = "ACTIVETIP";
+    public const string CLASSIFY = "CLASSIFY";
+    public const string SHOWGOLD = "SHOWGOLD";
+    public const string SHOWHINT = "SHOWHINT";
+    public const string HINTACTIVE = "HINTACTIVE";
+
+
 
     
 
@@ -45,6 +57,8 @@ public class BagFacade : PureMVC.Patterns.Facade
     public void Start()
     {
         SendNotification(PLAYBAG);
+        SendNotification(INITMAIN);
+         
     }
 
     /// <summary>
@@ -60,6 +74,9 @@ public class BagFacade : PureMVC.Patterns.Facade
         RegisterCommand(BUYSHOPGOODS, typeof(CreateTipCommand));
         RegisterCommand(BUYGOODSNUM, typeof(BuyNumCommand));
         RegisterCommand(LOADITEM, typeof(LoadItemCommand));
+        RegisterCommand(CLASSIFY, typeof(ShopClassIfyCommand));
+        RegisterCommand(INITMAIN, typeof(Main_Command));
+        RegisterCommand(SHOWHINT, typeof(HintCommand));
     }
     /// <summary>
     /// ×¢²áModel
@@ -70,6 +87,7 @@ public class BagFacade : PureMVC.Patterns.Facade
         RegisterProxy(new BagProxy(BagProxy.NAME));
         RegisterProxy(new ShopProxy(ShopProxy.NAME));
         RegisterProxy(new TipProxy(TipProxy.NAME));
+        RegisterProxy(new MainProXY(MainProXY.NAME));
 
     }
 

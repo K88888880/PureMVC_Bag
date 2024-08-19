@@ -8,7 +8,7 @@ public class TipProxy : PureMVC.Patterns.Proxy
 {
     public new static string NAME = "TipProxy";
 
-    TipModel model;
+   public  TipModel model;
     public TipProxy(string name) : base(NAME)
     {
         model = new TipModel();
@@ -34,10 +34,13 @@ public class TipProxy : PureMVC.Patterns.Proxy
 
     public void BuyGoodsNum(GoodsData goodsData)
     {
+        
         List<object> list = new List<object>();
         list.Add(model.Num);
         list.Add(goodsData);
         SendNotification(BagFacade.BUYNUM, list);
     }
+
+
 
 }

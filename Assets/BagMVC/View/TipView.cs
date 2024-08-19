@@ -13,4 +13,5 @@ public class TipView : MonoBehaviour
     public Button subbut;
     public Button confirm;
     public Button close;
+    public Text goldnum;
 }

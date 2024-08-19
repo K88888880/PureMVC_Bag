@@ -19,7 +19,7 @@ public class ShopItem : MonoBehaviour,IPointerClickHandler
     {
         if (eventData.pointerCurrentRaycast.gameObject.tag=="Shop")
         {
-            Debug.Log(0);
+           
             BagFacade.GetInstance().SendNotification(BagFacade.BUYSHOPGOODS, goods);
         }
     }

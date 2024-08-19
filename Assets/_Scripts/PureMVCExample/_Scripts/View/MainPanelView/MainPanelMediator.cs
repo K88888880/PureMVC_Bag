@@ -29,7 +29,7 @@ public class MainPanelMediator : PureMVC.Patterns.Mediator {
  playerData = Facade.RetrieveProxy(PlayerDataProxy.NAME) as PlayerDataProxy;
 
         //绑定按钮事件
-        View.ButtonPlay.onClick.AddListener (OnClickPlay);
+       // View.ButtonPlay.onClick.AddListener (OnClickPlay);
     }
 
     public void OnClickPlay () {
@@ -73,7 +73,6 @@ public class MainPanelMediator : PureMVC.Patterns.Mediator {
                         SendNotification (MyFacade.REWARD_TIP_VIEW, notification.Body);
 
                     }
-
                 }
                 break;
         }

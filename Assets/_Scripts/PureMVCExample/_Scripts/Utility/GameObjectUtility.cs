@@ -34,6 +34,18 @@ public class GameObjectUtility {
         obj.SetActive(false);
         return obj;
     }
+       public GameObject CreateHint(string name, Transform parent=null)
+    {
+        GameObject obj = Object.Instantiate(Resources.Load(name)) as GameObject;
+        obj.transform.position = Vector3.zero;
+        obj.transform.localScale = Vector3.one;
+        if(parent!=null)
+        {
+            obj.transform.parent = parent;
+        }   
+        
+        return obj;
+    }
 
     /// <summary>
     /// 创建对象
@@ -51,5 +63,5 @@ public class GameObjectUtility {
         obj.SetActive(false);
         return obj;
     }
-  
+    
 }

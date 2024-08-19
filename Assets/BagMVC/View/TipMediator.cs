@@ -15,6 +15,7 @@ public class TipMediator : PureMVC.Patterns.Mediator
     TipModel model;
     public TipMediator(object obj) : base(NAME)
     {
+        
         model = new TipModel();
         tipView = ((GameObject)(obj)).GetComponent<TipView>();
         tipView.close.onClick.AddListener(ClosePanel);
@@ -25,19 +26,19 @@ public class TipMediator : PureMVC.Patterns.Mediator
 
     private void Buy()
     {
-        SendNotification(BagFacade.BUYGOODSNUM, goodsData);
+        SendNotification(BagFacade.BUYGOODSNUM, goodsData,"D");
         tipView.buypanel.SetActive(false);
 
     }
 
     private void SubNum()
     {
-        SendNotification(BagFacade.BUYGOODSNUM, "Add");
+        SendNotification(BagFacade.BUYGOODSNUM, goodsData,"Add");
     }
 
     private void AddNum()
     {
-        SendNotification(BagFacade.BUYGOODSNUM, "Sub");
+        SendNotification(BagFacade.BUYGOODSNUM, goodsData, "Sub");
     }
 
     void ClosePanel()
@@ -51,6 +52,7 @@ public class TipMediator : PureMVC.Patterns.Mediator
         list.Add(BagFacade.ADDGOODSNUM);
         list.Add(BagFacade.SUBGOODSNUM);
         list.Add(BagFacade.ACTIVETIP);
+        list.Add(BagFacade.SHOWGOLD);
         return list;
     }
 
@@ -86,6 +88,9 @@ public class TipMediator : PureMVC.Patterns.Mediator
                     tipView.icon.sprite = Resources.Load<Sprite>("icon/" + goodsData.icon);
                     tipView.Nmae.text = goodsData.name;
                 }
+                break;
+            case BagFacade.SHOWGOLD:
+                tipView.goldnum.text= notification.Body.ToString(); 
                 break;
         }
     }
