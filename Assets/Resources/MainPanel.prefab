@@ -2734,7 +2734,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 394, y: 0}
+  m_AnchoredPosition: {x: 397, y: 0}
   m_SizeDelta: {x: 591.4883, y: 699.1476}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7011080742797038441
@@ -3014,6 +3014,10 @@ MonoBehaviour:
   equip: {fileID: 6671250700090044945}
   drug: {fileID: 4753583650051693435}
   treasureBox: {fileID: 1128047593095937152}
+  bagall: {fileID: 4830320434998562339}
+  bagequip: {fileID: 814000211387344595}
+  bagdrug: {fileID: 7471415031447252007}
+  bagtreasureBox: {fileID: 4583395120843320217}
 --- !u!1 &7011080744543975291
 GameObject:
   m_ObjectHideFlags: 0

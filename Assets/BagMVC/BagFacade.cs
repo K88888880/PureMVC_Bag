@@ -29,6 +29,10 @@ public class BagFacade : PureMVC.Patterns.Facade
     public const string SHOWGOLD = "SHOWGOLD";
     public const string SHOWHINT = "SHOWHINT";
     public const string HINTACTIVE = "HINTACTIVE";
+    public const string SHOWBAGGOODSHINT = "SHOWBAGGOODSHINT";
+    public const string ACTIVESELL = "ACTIVESELL";
+    public const string SELLGOODSGOLD = "SELLGOODSGOLD";
+    public const string BAGCLASSIFY = "BAGCLASSIFY";
 
 
 
@@ -77,6 +81,9 @@ public class BagFacade : PureMVC.Patterns.Facade
         RegisterCommand(CLASSIFY, typeof(ShopClassIfyCommand));
         RegisterCommand(INITMAIN, typeof(Main_Command));
         RegisterCommand(SHOWHINT, typeof(HintCommand));
+        RegisterCommand(SHOWBAGGOODSHINT, typeof(SellHintCommand));
+        RegisterCommand(SELLGOODSGOLD, typeof(SellGoodsCommand_));
+        RegisterCommand(BAGCLASSIFY, typeof(BagClassifyCommand));
     }
     /// <summary>
     /// ×¢²áModel

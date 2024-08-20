@@ -1,4 +1,5 @@
 using PureMVC.Interfaces;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +9,8 @@ public class BagMediator : PureMVC.Patterns.Mediator
     public new static string NAME = "BagMediator";
 
     public BagView bagView;
-     BagProxy bagProxy;
-    public BagMediator(object obj):base(NAME)
+    BagProxy bagProxy;
+    public BagMediator(object obj) : base(NAME)
     {
         //ªÒ»°BagView
         bagView = ((GameObject)(obj)).GetComponent<BagView>();
@@ -20,7 +21,33 @@ public class BagMediator : PureMVC.Patterns.Mediator
         bagView.close.onClick.AddListener(CloseBag);
         bagView.openbut.onClick.AddListener(OpenBag);
         SendNotification(BagFacade.CREATEBAG, bagView.bagitemcellparent);
-         
+        bagView.bagall.onClick.AddListener(All);
+        bagView.bagequip.onClick.AddListener(Equip);
+        bagView.bagdrug.onClick.AddListener(Durg);
+        bagView.bagtreasureBox.onClick.AddListener(Box);
+    }
+
+    private void All()
+    {
+        SendNotification(BagFacade.BAGCLASSIFY, "1", "All");
+
+    }
+
+    private void Equip()
+    {
+        SendNotification(BagFacade.BAGCLASSIFY, "1", "Equip");
+
+    }
+
+    private void Durg()
+    {
+        SendNotification(BagFacade.BAGCLASSIFY, "1", "Durg");
+
+    }
+
+    private void Box()
+    {
+        SendNotification(BagFacade.BAGCLASSIFY, "1", "Box");
     }
 
     /// <summary>
@@ -37,7 +64,7 @@ public class BagMediator : PureMVC.Patterns.Mediator
 
     public override IList<string> ListNotificationInterests()
     {
-       IList<string> list = new List<string>();
+        IList<string> list = new List<string>();
         list.Add(BagFacade.MODELCLOSEBAG);
         list.Add(BagFacade.BUYNUM);
         return list;
@@ -47,12 +74,12 @@ public class BagMediator : PureMVC.Patterns.Mediator
     public override void HandleNotification(INotification notification)
     {
         base.HandleNotification(notification);
-        switch(notification.Name)
+        switch (notification.Name)
         {
             case BagFacade.MODELCLOSEBAG:
                 bagView.bag.SetActive(false);
                 break;
-                case BagFacade.BUYNUM:
+            case BagFacade.BUYNUM:
                 //Debug.Log((notification.Body as List<object>)[0]);
                 //Debug.Log(((notification.Body as List<object>)[1] as GoodsData).icon);
                 SendNotification(BagFacade.LOADITEM, (notification.Body as List<object>));

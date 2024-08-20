@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class CreateShopCommand : PureMVC.Patterns.SimpleCommand
 {
-
-
-
     public override void Execute(INotification notification)
     {
         base.Execute(notification);

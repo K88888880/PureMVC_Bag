@@ -38,12 +38,12 @@ public class GameObjectUtility {
     {
         GameObject obj = Object.Instantiate(Resources.Load(name)) as GameObject;
         obj.transform.position = Vector3.zero;
+        //obj.transform.position = Input.mousePosition; ;
         obj.transform.localScale = Vector3.one;
         if(parent!=null)
         {
             obj.transform.parent = parent;
         }   
-        
         return obj;
     }
 
